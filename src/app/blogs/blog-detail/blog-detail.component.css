@@ -1,0 +1,13 @@
+.card{
+    margin: 50px 100px;
+    padding-top: 20px;
+}
+
+.edit{
+    padding: 10px 10px;
+}
+
+.edit:hover{
+    color: rgba(0,0,0,0.5);
+
+}

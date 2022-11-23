@@ -1,0 +1,46 @@
+footer{
+    background-color: #363636;
+}
+
+
+
+.author{
+    color: aliceblue; 
+    text-align:center
+}
+
+
+.myIcons{
+    color:aliceblue;
+    float:right;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.imgIcon{
+    filter: invert(100%) sepia(24%) saturate(6345%) hue-rotate(178deg) brightness(103%) contrast(116%);
+    max-height: 27px; 
+    max-width: 24px;
+    margin-right: 10px;
+    float: right;
+}
+
+@media screen and (max-width: 750px) {
+
+    .myIcons{
+        float: none;
+        position: absolute;
+        transform: translate(0%, -50%);
+        
+    }
+
+    .imgIcon{
+        float: none;
+        position: absolute;
+        transform: translate(-100%, -50%);
+    }
+
+    .icons{
+        text-align: center;
+    }
+}

@@ -1,0 +1,36 @@
+<form class="formStyle" (ngSubmit)="onSubmit(postDetailform)" #postDetailform="ngForm">
+<div class="container">
+    <div class="contact-box">
+      <div class="left">
+        <div [hidden]="!image">
+            <img [src] = "getImage()">
+        </div>
+      </div>
+      <div class="right">
+        <h2>Create Post</h2>
+        <input type="text" class="field" placeholder="Title" name="title" [(ngModel)]="title">
+        <textarea class="field area" placeholder="Type Your Message Here" name="content" [(ngModel)]="content" rows="10"></textarea>
+        <div class="file">
+            <label class="file-label">
+                <input class="file-input" type="file" name="file" (change)="uploadImage($event)"/>
+                <span class="file-cta">
+                    <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                        Choose a File
+                    </span>
+                </span>
+                <span class="file-name">
+                  {{image}}
+                </span>
+              </label>
+            </div>
+            
+            <progress class="progress" value="[(progress)]" max="100">{{progress}}</progress>
+        <button type="submit" class="btn" [disabled]="!title || !content" (click)="submitPost()">{{buttonText}}</button>
+        <button type="submit" class="btn" [disabled]="!image" (click)="submitGalleryPic()">{{galleryText}} </button>
+      </div>
+    </div>
+  </div>
+</form>

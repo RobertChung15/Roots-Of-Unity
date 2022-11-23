@@ -1,0 +1,19 @@
+<section id="pics">
+    <div class="pics-heading">
+      <h3>My Gallery</h3>
+    </div>
+  </section>
+  <section>
+    <div>Hello</div>
+  </section>
+  <section>
+    <div class="main">
+      <div *ngFor="let image of imageArray">
+        <figure class="image is-4by3">
+          <img class="galleryImg" src="{{image.downloadUrl}}">
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section>
+  </section>

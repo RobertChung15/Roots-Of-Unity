@@ -1,0 +1,17 @@
+<form (ngSubmit)="submitForm(contactForm)" #contactForm="ngForm">
+  <div class="container">
+    <div class="contact-box">
+      <div class="left"></div>
+      <div class="right">
+        <h2>Contact Me</h2>
+        <input [(ngModel)] = "name" name="name" type="text" class="field" placeholder="Your Name" required/>
+        <input  [(ngModel)] = "email" name="email" type="email" class="field"  #emailInput="ngModel" placeholder="Your Email" required email/>
+        <textarea [(ngModel)] = "message" name="message"  class="field area" placeholder="Type Your Message Here"></textarea>
+        <div class="help is-error" *ngIf="emailInput.invalid && emailInput.dirty">
+          Your email is required.
+        </div>
+        <button type="submit" class="btn" [disabled]="contactForm.invalid">Send</button>
+      </div>
+    </div>
+  </div>
+</form>

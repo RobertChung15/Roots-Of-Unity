@@ -1,0 +1,18 @@
+<form class="main">
+    <div class="inputFields">
+        <input type="text" placeholder="Display Name" name="Display Name" [(ngModel)]="displayName">
+    </div>
+    <div class="inputFields">
+        <input type="text" placeholder="email" name="email" [(ngModel)]="email">
+    </div>
+    <div class="inputFields">
+        <input type="text" placeholder="password" name="password" [(ngModel)]="password">
+    </div>
+    <!-- <button type="submit" (click)="signUp()">Sign Up</button>  -->
+    <button type="submit" (click)="login()">Login In</button>
+    <button type="submit" (click)="logout()">Login Out</button>
+</form>
+
+<div *ngIf="loggedIn">
+    <p>You are logged in {{user.displayName}}</p>
+</div>

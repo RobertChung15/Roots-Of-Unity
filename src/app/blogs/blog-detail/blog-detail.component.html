@@ -1,0 +1,42 @@
+<div *ngIf="editing">
+    <div class="card">
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <input type="text" [(ngModel)]="post.title">
+                </div>
+            </div> 
+            <textarea [(ngModel)]="post.content"></textarea><br>
+            <button class="button is-primary is-light" (click)="updatePost()">Update Post</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!editing">
+    <div class="card">
+        <div *ngIf="logged">
+            <fa-icon [icon]="faPencil" class="edit fa-lg" (click)="editingPost()"></fa-icon>
+            
+            <button class="delete is-medium" (click)="deletePost()"></button>
+        </div>
+        
+        <div class="card-image">
+            <figure class="image is-16by9">
+                <img src="{{post.imageUrl}}" alt="Placeholder image">
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p class="title is-4">{{post.title}}</p>
+                    <p class="subtitle is-6">{{post.author}}</p>
+                </div>
+            </div> 
+            <div class="content">
+                {{post.content}}
+                <br>
+                {{post.published}}
+            </div>
+        </div>
+    </div>
+</div>
